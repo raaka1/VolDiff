@@ -24,7 +24,7 @@
 
 <p>VolDiff is a bash script that runs Volatility plugins against memory images captured before and after malware execution. It creates a report that highlights system changes based on memory (RAM) analysis.</p>
 
-<p>VolDiff is a simple yet powerful malware analysis tool that enables malware analysts to quickly identify IOCs and understand advanced malware behavior.</p>
+<p>VolDiff is a simple yet powerful malware analysis tool that enables malware analysts to quickly identify IOCs and understand advanced malware behavior. It can also be used to analyse a single memory image for malicious patterns.</p>
 
 <h2>
 <a id="use-directions" class="anchor" href="#use-directions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use Directions</h2>
@@ -54,15 +54,13 @@
 <h2>
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
 
-<p>A number of options is available in VolDiff and can be used as follows:</p>
+<p>A number of options are available in VolDiff to automatically hunt and report anomalies.</p>
 
 <pre>
-./VolDiff.sh [path/to/baseline.vmem] path/to/infected.vmem profile [Options]
+./VolDiff.sh [path/to/baseline.vmem] path/to/infected.vmem profile [options]
 </pre>
 
-<p>The recommended option to use with VolDiff is:</p>
-
-<p><code>--process-checks</code> : check process parent/child relationships, execution path, unusual loaded DLLs etc.</p>
+<p>The recommended option to use with VolDiff is <code>--process-checks</code> , which checks process parent/child relationships, execution path, unusual loaded DLLs, suspicious imports and much more.</p>
 
 <p>The following options can also be used but are likely to generate false positives: </p>
 
@@ -70,7 +68,7 @@
 
 <p><code>--string-checks</code> : search for suspicious strings in memory (IPs, domains, emails etc).</p>
 
-<p>The options above are experimental, and will slow down VolDiff execution.</p>
+<p>The options above were tested and tailored for Windows 7 memory images, and will slow down VolDiff execution.</p>
 
 <p>Use <code>--help</code> to view all the available options: </p>
 
